@@ -1,0 +1,117 @@
+{
+  "name": "GROMACS molecular dynamics",
+  "fields": [
+    {
+      "key": "run_name",
+      "label": "Run name",
+      "type": "string",
+      "description": "Name of the imported GROMACS run, derived from its folder.",
+      "required": false,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "workflow_name",
+      "label": "Workflow",
+      "type": "string",
+      "description": "Workflow inferred from the integrator and temperature or pressure coupling settings.",
+      "required": false,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "engine_version",
+      "label": "Engine version",
+      "type": "string",
+      "description": "GROMACS version reported by a log or output file.",
+      "heuristicPatterns": ["GROMACS(?:\\s+[^\\n,]*)?,?\\s+VERSION\\s+([0-9]+(?:\\.[0-9]+)+)"],
+      "required": false,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "method",
+      "label": "Method",
+      "type": "string",
+      "description": "Method inferred from the GROMACS integrator setting.",
+      "required": true,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "force_field",
+      "label": "Force field",
+      "type": "string",
+      "description": "Force-field include files found in GROMACS topology text.",
+      "required": false,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "temperature",
+      "label": "Temperature",
+      "type": "number_with_unit",
+      "description": "First reference temperature from ref_t, expressed in kelvin.",
+      "heuristicPatterns": ["^\\s*ref_t\\s*=\\s*([0-9]+(?:\\.[0-9]+)?(?:\\s+[0-9]+(?:\\.[0-9]+)?)?)"],
+      "required": true,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "pressure_coupling",
+      "label": "Pressure coupling",
+      "type": "boolean",
+      "description": "Whether pressure coupling is enabled through pcoupl.",
+      "required": true,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "pressure",
+      "label": "Pressure",
+      "type": "number_with_unit",
+      "description": "First reference pressure from ref_p, expressed in bar.",
+      "heuristicPatterns": ["^\\s*ref_p\\s*=\\s*([0-9]+(?:\\.[0-9]+)?(?:\\s+[0-9]+(?:\\.[0-9]+)?)?)"],
+      "required": false,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "time_step",
+      "label": "Time step",
+      "type": "number_with_unit",
+      "description": "GROMACS integration timestep from dt, expressed in picoseconds.",
+      "heuristicPatterns": ["^\\s*dt\\s*=\\s*([0-9]+(?:\\.[0-9]+)?)"],
+      "required": true,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "total_steps",
+      "label": "Total steps",
+      "type": "integer",
+      "description": "Number of integration steps from nsteps.",
+      "heuristicPatterns": ["^\\s*nsteps\\s*=\\s*([0-9_]+)"],
+      "required": true,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "coulomb_type",
+      "label": "Coulomb type",
+      "type": "string",
+      "description": "Electrostatics method from coulombtype.",
+      "heuristicPatterns": ["^\\s*coulombtype\\s*=\\s*([^\\s;#]+)"],
+      "required": false,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "vdw_type",
+      "label": "Van der Waals type",
+      "type": "string",
+      "description": "Van der Waals method from vdw-type.",
+      "heuristicPatterns": ["^\\s*vdw-type\\s*=\\s*([^\\s;#]+)"],
+      "required": false,
+      "includeInFrontmatter": true
+    },
+    {
+      "key": "constraints",
+      "label": "Constraints",
+      "type": "string",
+      "description": "Bond constraint mode from constraints.",
+      "heuristicPatterns": ["^\\s*constraints\\s*=\\s*([^\\s;#]+)"],
+      "required": false,
+      "includeInFrontmatter": true
+    }
+  ]
+}

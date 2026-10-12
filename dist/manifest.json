@@ -1,0 +1,8 @@
+{
+	"id": "fabricator",
+	"name": "Fabricator",
+	"version": "1.0.0",
+	"minAppVersion": "1.11.4",
+	"description": "Import and organize computational experiment runs in Obsidian.",
+	"isDesktopOnly": true
+}

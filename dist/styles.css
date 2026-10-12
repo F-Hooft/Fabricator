@@ -1,0 +1,232 @@
+.wp3-import-modal {
+	min-width: min(520px, calc(100vw - 32px));
+}
+
+.wp3-import-progress-status {
+	display: grid;
+	gap: 8px;
+	margin-top: 12px;
+	color: var(--text-muted);
+	font-size: 0.9em;
+}
+
+.wp3-import-progress-status progress {
+	width: 100%;
+	height: 8px;
+	accent-color: var(--interactive-accent);
+}
+
+.wp3-import-progress-count {
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+
+.wp3-import-preview-modal {
+	min-width: min(1200px, calc(100vw - 32px));
+	max-height: 90vh;
+	overflow-y: auto;
+}
+
+.wp3-import-preview-modal .wp3-workflow-container {
+	margin-bottom: 20px;
+	padding: 12px;
+	background-color: var(--background-secondary);
+	border-radius: 4px;
+}
+
+.wp3-import-preview-modal .wp3-workflow-selector {
+	margin-bottom: 20px;
+}
+
+.wp3-import-preview-modal .wp3-selector-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.wp3-import-preview-modal .wp3-workflow-button {
+	padding: 6px 12px;
+	background-color: var(--background-tertiary);
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.wp3-import-preview-modal .wp3-workflow-button:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.wp3-import-preview-modal .wp3-workflow-button.active {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+
+.wp3-import-preview-modal .wp3-preview-container {
+	margin-bottom: 20px;
+}
+
+.wp3-import-preview-modal .wp3-run-preview {
+	margin-bottom: 24px;
+	padding: 12px;
+	background-color: var(--background-secondary);
+	border-radius: 4px;
+	border-left: 3px solid var(--interactive-accent);
+}
+
+.wp3-import-preview-modal .wp3-run-preview h4 {
+	margin: 0 0 12px 0;
+	font-size: 0.95em;
+	color: var(--text-normal);
+}
+
+.wp3-import-preview-modal .wp3-preview-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.9em;
+}
+
+.wp3-import-preview-modal .wp3-preview-table th,
+.wp3-import-preview-modal .wp3-preview-table td {
+	padding: 8px;
+	text-align: right;
+	border-bottom: 1px solid var(--divider-color);
+}
+
+.wp3-import-preview-modal .wp3-preview-table th {
+	background-color: var(--background-tertiary);
+	font-weight: 600;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.wp3-import-preview-modal .wp3-preview-table tr:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.wp3-import-preview-modal .wp3-key-cell {
+	font-weight: 500;
+	min-width: 120px;
+}
+
+.wp3-import-preview-modal .wp3-required {
+	color: var(--text-error);
+	margin-left: 2px;
+}
+
+.wp3-import-preview-modal .wp3-llm-difference {
+	outline: 1px solid var(--text-warning);
+	background-color: var(--background-secondary-alt);
+	color: var(--text-warning);
+	font-weight: 600;
+}
+
+.wp3-import-preview-modal .wp3-llm-difference-row .wp3-key-cell {
+	border-left: 3px solid var(--text-warning);
+}
+
+.wp3-import-preview-modal .wp3-heuristic-cell {
+	color: var(--text-muted);
+	font-size: 0.85em;
+	max-width: 150px;
+	word-break: break-word;
+}
+
+.wp3-import-preview-modal .wp3-llm-cell {
+	color: var(--text-muted);
+	font-size: 0.85em;
+	max-width: 150px;
+	word-break: break-word;
+	font-style: italic;
+}
+
+.wp3-import-preview-modal .wp3-final-cell {
+	max-width: 200px;
+}
+
+.wp3-import-preview-modal .wp3-final-input {
+	width: 100%;
+	padding: 4px 6px;
+	background-color: var(--input-background-color);
+	border: 1px solid var(--input-border-color);
+	border-radius: 3px;
+	color: var(--text-normal);
+	font-size: 0.9em;
+	text-align: right;
+}
+
+.wp3-import-preview-modal .wp3-final-input:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--interactive-accent);
+	opacity: 0.2;
+}
+
+.wp3-import-preview-modal .wp3-managed {
+	background-color: var(--background-tertiary);
+	color: var(--text-muted);
+	font-size: 0.85em;
+}
+
+.wp3-import-preview-modal .wp3-import-buttons {
+	display: flex;
+	gap: 12px;
+	margin-top: 20px;
+	justify-content: flex-end;
+}
+
+.wp3-import-preview-modal button {
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+
+.wp3-import-preview-modal button.mod-cta {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: 1px solid var(--interactive-accent);
+}
+
+.wp3-import-preview-modal button.mod-cta:hover {
+	opacity: 0.9;
+}
+
+.wp3-import-modal button.wp3-import-progress,
+.wp3-import-preview-modal button.wp3-import-progress {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	cursor: wait;
+}
+
+.wp3-import-modal button.wp3-import-progress::before,
+.wp3-import-preview-modal button.wp3-import-progress::before {
+	content: '';
+	width: 14px;
+	height: 14px;
+	border: 2px solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	animation: wp3-import-spin 0.7s linear infinite;
+}
+
+@keyframes wp3-import-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.wp3-import-preview-modal button:not(.mod-cta) {
+	background-color: var(--background-tertiary);
+	color: var(--text-normal);
+	border: 1px solid var(--border-color);
+}
+
+.wp3-import-preview-modal button:not(.mod-cta):hover {
+	background-color: var(--background-modifier-hover);
+}
